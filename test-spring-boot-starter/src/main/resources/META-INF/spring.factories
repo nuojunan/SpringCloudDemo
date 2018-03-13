@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.bjnja.spring.boot.starter.ExampleAutoConfigure

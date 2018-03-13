@@ -1,0 +1,21 @@
+server:
+ port: 8087
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:8081/eureka/
+spring:
+ application:
+  name: config-service
+ cloud:
+  config:
+   server:
+    git:
+     uri: https://github.com/nuojunan/config.git
+     searchPaths: 
+#     username:
+#     password:
+   label: master
+management:
+ security:
+  enabled: false

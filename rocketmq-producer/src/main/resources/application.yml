@@ -1,0 +1,10 @@
+spring:
+ rocketmq:
+  name-server: 192.168.99.100:9876
+  producer: 
+   group: my-group
+example:
+ service:
+  enabled: true
+  prefix: ldy=
+  suffix: deyi=

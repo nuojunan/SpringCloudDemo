@@ -1,0 +1,25 @@
+server:
+ port: 8088
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:8081/eureka/
+spring:
+ application:
+  name: nja-etp
+ cloud:
+  config:
+#   uri: http://localhost:8087
+   profile: dev
+   label: master 
+   discovery:
+    enabled: true
+    serviceId: config-service
+ profiles:
+  active: dev
+management:
+ security:
+  enabled: false
+
+
+
