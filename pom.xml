@@ -54,5 +54,6 @@
     <module>rocketmq-producer</module>
     <module>rocketmq-consumer</module>
     <module>test-spring-boot-starter</module>
+    <module>fastdfs-demo</module>
   </modules>
 </project>
