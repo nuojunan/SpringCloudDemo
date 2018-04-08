@@ -1,0 +1,7 @@
+server:
+ port: 8018
+spring:
+ application:
+  name: i18n-demo
+ messages:
+  basename: i18n/messages
