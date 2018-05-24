@@ -9,13 +9,25 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+/**
+ * 多语言配置
+ * 需要配置文件中添加下面资源文件
+ * spring.messages.basename=i18n/messages
+ * src/main/resources
+ *      i18n
+ *        messages.properties
+ *        messages_en.properties
+ *        messages_zh_CN.properties
+ *    
+ * @author ldy
+ *
+ */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-public class LocaleConfig extends WebMvcConfigurerAdapter{
+public class NjaLocaleConfig extends WebMvcConfigurerAdapter{
 
 	@Bean
     public LocaleResolver localeResolver() {
@@ -26,11 +38,9 @@ public class LocaleConfig extends WebMvcConfigurerAdapter{
     }
 
     @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor() {
-        LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
-        // 设置请求地址的参数,默认为：locale
-//        lci.setParamName("lang");
-        return lci;
+    public NjaLocaleChangeInterceptor localeChangeInterceptor() {
+    	// 国际化拦截器
+    	return new NjaLocaleChangeInterceptor();
     }
 
     @Override

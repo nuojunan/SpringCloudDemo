@@ -56,5 +56,6 @@
     <module>test-spring-boot-starter</module>
     <module>fastdfs-demo</module>
     <module>i18n-demo</module>
+    <module>netty-service</module>
   </modules>
 </project>
