@@ -80,4 +80,10 @@ public class Client {
 	            socketChannel.writeAndFlush(msg);  
 	        }  
 	    }  
+	    
+	    public void stop() {
+	    	 if (socketChannel != null && socketChannel.isActive()) {  
+	    		 socketChannel.close();
+		        }  
+	    }
 }

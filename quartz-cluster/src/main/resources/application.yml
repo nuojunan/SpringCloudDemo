@@ -1,0 +1,39 @@
+server:
+ port: 8200
+spring:
+ application:
+  name: quartz-cluster
+# db 属性配置
+ datasource:
+#  type: com.alibaba.druid.pool.DruidDataSource
+#  driver-class-name: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@192.168.99.100:1521:xe
+  username: baseweb
+  password: baseweb
+  
+ jpa:
+  hibernate:
+#    ddl-auto: create #ddl-auto:设为create表示每次都重新建表
+    ddl-auto: update #ddl-auto:设为update表示每次都不会重新建表
+    dialect: org.hibernate.dialect.Oracle12cDialect
+  show-sql: true
+  
+# 打印日志
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.bjnja: DEBUG
+
+# 定时任务调度，支持集群    （下面配置标默认的可以不写）@ldy
+scheduler:
+ enabled: true                 # 开启
+ overwriteExistingJobs: true  # 不重新初始化 （默认true）
+ instanceName: testSchedule    # schedule实例名称，集群需一致（默认njaSchedule）
+ tablePrefix: QRTZ_            # schedule表前缀，集群需一致（默认QRTZ_）
+ isClustered: true             # 加入集群（默认true）
+ threadCount: 10               # 线程数（默认10）
+ clusterCheckinInterval: 20000 # 检查集群心跳间隔（默认20000ms）
+ startupDelay: 20              # 延迟启动（默认20s）

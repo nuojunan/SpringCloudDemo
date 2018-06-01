@@ -9,17 +9,20 @@ public class NettyTestCase {
 	@Test
 	public void start() {
 		Scanner input = new Scanner(System.in);  
-        Client bootstrap = new Client(8200, "127.0.0.1");    
-          
+        Client bootstrap = new Client(8110, "127.0.0.1");    
         String infoString = "";  
         while (true){  
             infoString = input.nextLine();  
+            if ("bye".equals(infoString)) {
+            	bootstrap.stop();
+            	return;
+            }
             MethodInvokeMeta meta = new MethodInvokeMeta();
             meta.setMethodName("hi");
             meta.setInterfaceClass(TestController.class);
             meta.setReturnType(String.class);
 //            meta.setArgs(new Object[]{infoString});
-            bootstrap.sendMessage(meta);    
+            bootstrap.sendMessage(meta);
              
         }   
 	}

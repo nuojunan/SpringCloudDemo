@@ -23,7 +23,7 @@ public class NettyServiceApp {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
 		SpringApplication.run(NettyServiceApp.class, args);
-		bind(8200);
+		bind(8110);
 	}
 
 	private static ServerSocketChannel serverSocketChannel;
