@@ -10,3 +10,12 @@ spring:
 feign:
  hystrix:
   enabled: true
+
+management:  
+  security:  
+    enabled: false    #关闭安全验证  
+    
+turbine.appConfig: service-feign,service-ribbon
+turbine.aggregator.clusterConfig: default
+turbine.clusterNameExpression: new String("default")
+turbine.instanceUrlSuffix: /hystrix.stream

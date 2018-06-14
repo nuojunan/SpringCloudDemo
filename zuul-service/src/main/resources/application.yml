@@ -15,3 +15,7 @@ zuul:
   ribbon:
    path: /ribbon/**
    serviceId: service-ribbon
+
+management:  
+  security:  
+    enabled: false    #关闭安全验证  

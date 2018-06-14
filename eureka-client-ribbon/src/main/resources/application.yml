@@ -7,3 +7,7 @@ eureka:
 spring:
  application:
   name: service-ribbon
+
+management:  
+  security:  
+    enabled: false    #关闭安全验证  

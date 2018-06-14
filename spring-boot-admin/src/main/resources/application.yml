@@ -1,0 +1,16 @@
+server:
+ port: 8092
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://localhost:8081/eureka/
+spring:
+ application:
+  name: spring-boot-admin
+
+management:  
+  security:  
+    enabled: false    #关闭安全验证  
+
+
+spring.boot.admin.turbine.location: service-feign
